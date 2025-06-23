@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel = "stylesheet" href = "../static/stylesheet/main.css"></link>
+      <link rel = "icon" href = "static/icon/app.ico" type = "image/x-icon">
+      <title>{% block title %}{% endblock %}</title>
+   </head>
+   <body>
+      <header>
+         <div id = "appheader">
+            <img src = "../static/img/appimg.png" id = "appimg" class = "headerElements" alt = "SKILL UP IMG">
+            <h1 id = "appname" class = "headerElements">SKILL UP</h1>
+            <img src = "../static/img/htklogo.png" id = "htklogo" class = "headerElements" alt = "HTK logo" onclick = "window.open('https://hyundaiplant.kz/ru/', '_blank')">  
+            <h1 id = "appuser" class = "headerElements">user | Igor Alexeyev</h1>
+            <img src = "../static/img/userlogo.png" id = "userlogo" class = "headerElements" alt = "User logo" onclick = "displayUserImg(this);">
+         </div>
+      </header>
+      <main>
+         <div id = "appmain">
+            {% block content %}
+            {% endblock %}
+         </div>
+      </main>
+      <footer>
+             <p id = "appfooter">© Hyundai Trans Kazakhstan | Manufacturing development department | Local access | Almaty | 2025</p>
+      </footer>
+      <script src = "/static/asset/general.js"></script>
+   </body>
+</html>
