@@ -1,17 +1,27 @@
-from sqlalchemy import create_engine, text
-import traceback
+import sqlite3
 
-# Connecting to database
-engine = create_engine(
-    url=
-    "mysql+pymysql://freedb_alex_prism:3VPWBQDPwh6yG%40s@sql.freedb.tech:3306/freedb_prism_xsu"
-)
-try:
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from base"))
-except Exception as e:
-    print(f"Database connection error: {e}")
-    traceback.print_exc()
+# PRISM database structure: headers table([key(int)], [hname(text)], hdata(text)))
 
-base = result.all()
-print(base[0][2])
+
+# main: load headers during loading all pages
+def load_headers():
+    conn = sqlite3.connect('prismdb.db')
+    prism_cursor = conn.cursor()
+    prism_cursor.execute("SELECT * FROM headers")
+    headers_data = prism_cursor.fetchall()
+    conn.close()
+    return headers_data
+
+
+# PRISM database structure: headers table([key(int)], [hname(text)], hdata(text)))
+
+#cursor.execute('''
+#    CREATE TABLE IF NOT EXISTS users (
+#        id INTEGER PRIMARY KEY,
+#        name TEXT,
+#        age INTEGER
+#    )
+#''')
+
+#cursor.execute("INSERT INTO users (name, age) VALUES (?, ?)", ('Иван', 30))
+#conn.commit()
