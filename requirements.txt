@@ -3,3 +3,4 @@ Gunicorn
 sqlalchemy
 mysql-connector-python
 db
+matplotlib

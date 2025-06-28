@@ -1,0 +1,33 @@
+Useful python functions:
+
+1. Convert picture to the binary file {
+with open('static/img/appimg.png', 'rb') as file:
+    blobData = file.read()
+}
+
+2. Display the image from BLOB binary data {
+    with open('static/img/appimg.png', 'rb') as file:
+      blobpic = file.read()
+    blob_data = blobpic
+    # Simulate a BLOB (replace with your actual BLOB data)
+    # This example uses a small red square image in PNG format
+    # Convert BLOB data to a file-like object
+     image_stream = io.BytesIO(blob_data)
+    # Open the image using Pillow
+    img = Image.open(image_stream)
+    # Display the image using Matplotlib
+    plt.imshow(img)
+    plt.axis('off') # Hide axes for cleaner display
+    plt.show()
+}
+
+
+3. Convert the picure to base64 format {
+import base64
+
+with open("static/img/appimg.png", "rb") as image_file:
+  encoded_string = base64.b64encode(image_file.read())
+
+alex = encoded_string.decode('utf-8')
+print(alex)
+}

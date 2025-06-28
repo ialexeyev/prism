@@ -1,12 +1,12 @@
 from flask import Flask, render_template
-from db import load_headers
+from db import load_baseDB
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def prism():
-  return render_template('home.html', headers=load_headers())
+  return render_template('home.html', headers=load_baseDB())
 
 
 if (__name__ == "__main__"):
