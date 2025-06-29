@@ -31,3 +31,7 @@ with open("static/img/appimg.png", "rb") as image_file:
 alex = encoded_string.decode('utf-8')
 print(alex)
 }
+
+4. Check the tables count in database (sqlite3) {
+  ("SELECT name FROM sqlite_master WHERE type='table';")
+}

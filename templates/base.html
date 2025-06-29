@@ -4,17 +4,18 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link rel = "stylesheet" href = "../static/stylesheet/main.css"></link>
-      <link rel = "icon" href = "static/icon/app.ico" type = "image/x-icon">
+      <link rel = "icon" href = "static/icon/app.ico" type = "image/x-icon"></link>
+      {% block stylesheets %}{% endblock %}
       <title>{% block title %}{% endblock %}</title>
    </head>
    <body>
       <header>
          <div id = "appheader">
-            <img src = "data:image/png;base64,{% print(headers[3][2]) %}" id = "appimg" class = "headerElements" alt = "SKILL UP IMG">
-            <h1 id = "appname" class = "headerElements">{% print (headers[0][2]) %}</h1>
-            <img src = "data:image/png;base64,{% print(headers[4][2]) %}" id = "htklogo" class = "headerElements" alt = "HTK logo" onclick = "window.open('https://hyundaiplant.kz/ru/', '_blank')">  
-            <h1 id = "appuser" class = "headerElements">{% print(headers[5][2]) %}</h1>
-            <img src = "data:image/png;base64,{% print(headers[6][2]) %}" id = "userlogo" class = "headerElements" alt = "User logo" onclick = "displayUserImg(this);">
+            <img src = "static/img/appimg.png" id = "appimg" class = "headerElements" alt = "SKILL UP IMG">
+            <h1 id = "appname" class = "headerElements">{% print (base[0][2]) %}</h1>
+            <img src = "static/img/htklogo.png" id = "htklogo" class = "headerElements" alt = "HTK logo" onclick = "window.open('https://hyundaiplant.kz/ru/', '_blank')">  
+            <h1 id = "appuser" class = "headerElements">{% print(base[5][2]) %}</h1>
+            <img src = "data:image/png;base64,{% print(base[6][2]) %}" id = "userlogo" class = "headerElements" alt = "User logo" onclick = "displayUserImg(this);">
          </div>
       </header>
       <main>
@@ -24,8 +25,9 @@
          </div>
       </main>
       <footer>
-             <p id = "appfooter">{% print(headers[1][2]) %}</p>
+             <p id = "appfooter">{% print(base[1][2]) %}</p>
       </footer>
+      {% block scripts %}{% endblock %}
       <script src = "/static/asset/general.js"></script>
    </body>
 </html>

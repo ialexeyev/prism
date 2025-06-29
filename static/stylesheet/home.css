@@ -1,0 +1,14 @@
+/* SKILL UP application home page styles */
+
+body {
+  opacity: 0;
+  transition: 1s;
+}
+
+#homeimg {
+  transition: 1s;
+}
+
+#homeimg:hover {
+  cursor: pointer;
+}

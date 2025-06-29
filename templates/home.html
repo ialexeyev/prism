@@ -1,4 +1,21 @@
 {% extends "base.html" %}
 
+<!-- styles -->
+{% block stylesheets %}
+<link rel = "stylesheet" href = "static/stylesheet/home.css"></link>
+{% endblock %}
+
 <!-- title -->
-{% block title %}SKILL UP: Hyundai Trans Kazakhstan{% endblock %}
+{% block title %}{% print(headers[0][2]) %}{% endblock %}
+
+<!-- main content -->
+{% block content %} 
+<div id = "homeBlock" class = "WallBlocks">
+  <img src = "static/img/homeimg.png" id = "homeimg" class = "WallImages" alt = "Home image" title = "CLICK ME TO START" onclick = "appstart(this)";>
+</div>
+{% endblock %}
+
+<!-- scripts -->
+{% block scripts %}
+<script src = "static/asset/home.js"></script>
+{% endblock %}
