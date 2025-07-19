@@ -11,7 +11,20 @@
 <!-- main content -->
 {% block content %} 
 <div id = "homeBlock" class = "WallBlocks">
-  <img src = "static/img/homeimg.png" id = "homeimg" class = "WallImages" alt = "Home image" title = "CLICK ME TO START" onclick = "appstart(this)";>
+  <div id = "signInFormBlock" class = "FormBlocks">
+    <h2 class = "StandardHeaders">Sign in</h2>
+    <div class = "SignInForms" id = "signInForm">
+      <form action = "" method = "post">
+          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "ID" autocomplete="off" onfocus = "" required>
+          <input type = "password" class = "UserInput" id = "userPsw" name = "userPsw" placeholder = "Password" autocomplete="off" onfocus = "" required>
+          <a href = "" rel = "alternate" target = "_self" id = "signUpLink">No account? Create one!</a>
+          <h3 class = "ErrorMessages" id = "idErrMess">ERROR</h3>
+          <button type = "button" class = "FormButtons" id = "signInButton" value = "Start" onclick = "">START</button>
+      </form>
+    </div>
+  </div>
+  <img src = "static/img/homeimg.png" id = "homeimg" class = "WallImages" alt = "Home image" title = "CLICK ME TO START" onclick = "appstart(this)">
+   <img src = "static/img/wall.jpg" id = "signinimg" class = "WallImages" alt = "Sign in image" onclick = "";>
 </div>
 {% endblock %}
 
