@@ -227,12 +227,12 @@ body {
 @media screen and (max-width: 480px) {
   #signInFormBlock {
     width: 100vw;
-    height: 33vh;
+    height: 32vh;
     margin: 23vh 0vw;
   }
   .StandardHeaders {
     margin-top: 4vw;
-    font-size: 3.8vw;
+    font-size: 4vw;
   }
   .SignInForms {
     margin-top: 3vw;
@@ -241,20 +241,20 @@ body {
   .UserInput {
     margin: 3.5vw 0vw;
     height: 4vw;
-    font-size: 3.2vw;
+    font-size: 3.5vw;
   }
   .ErrorMessages {
     margin-top: 1.3vw;
-    font-size: 3.2vw;
+    font-size: 3.5vw;
   }
   .FormButtons {
     width: 18vw;
     height: 8vw;
-    font-size: 3.2vw;
+    font-size: 3.5vw;
     margin: 1.3vw auto;
   }
   #signUpLink {
-    font-size: 3.2vw; 
+    font-size: 3.5vw; 
   }
 }
 
@@ -262,7 +262,7 @@ body {
 @media screen and (max-width: 360px) {
   #signInFormBlock {
     width: 100vw;
-    height: 38vh;
+    height: 37vh;
     margin: 20vh 0vw;
   }
   .StandardHeaders {
@@ -276,19 +276,19 @@ body {
   .UserInput {
     margin: 4.2vw 0vw;
     height: 4.5vw;
-    font-size: 3.9vw;
+    font-size: 4.1vw;
   }
   .ErrorMessages {
     margin-top: 1.3vw;
-    font-size: 3.9vw;
+    font-size: 4.1vw;
   }
   .FormButtons {
     width: 22vw;
     height: 10vw;
-    font-size: 3.9vw;
+    font-size: 4.1vw;
     margin: 1.5vw auto;
   }
   #signUpLink {
-    font-size: 3.9vw; 
+    font-size: 4.1vw; 
   }
 }
