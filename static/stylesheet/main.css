@@ -235,13 +235,13 @@ body {
       height: 90%;
     }
     #userlogo {
-      margin-top: 1.5vw;
+      margin-top: 1.6vw;
       height: 60%;
     }
 
   #appmain {
     margin-top: 0.9vh;
-    height: 90vh;
+    height: 86vh;
   }
 
   #appfooter {
@@ -266,7 +266,7 @@ body {
       margin: 2.5vw 2.1vw 0vw 0.9vw;
     }
     #htklogo {
-      margin-top: 1.3vw;
+      margin-top: 1.4vw;
       height: 85%;
     }
     #userlogo {
@@ -276,11 +276,11 @@ body {
   
   #appmain {
     margin-top: 0.7vh;
-    height: 88vh;
+    height: 85vh;
   }
   
   #appfooter {
     font-size: 3vw;
-    margin-top: 1.2vw;
+    margin-top: 1vw;
   }
 }

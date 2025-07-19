@@ -226,35 +226,35 @@ body {
 /* SMARTPHONES: 480px */
 @media screen and (max-width: 480px) {
   #signInFormBlock {
-    width: 66vw;
-    height: 44vh;
-    margin: 22vh 15vw;
+    width: 100vw;
+    height: 38vh;
+    margin: 24vh 0vw;
   }
   .StandardHeaders {
-    margin-top: 3.7vw;
-    font-size: 3.6vw;
+    margin-top: 4vw;
+    font-size: 3.8vw;
   }
   .SignInForms {
-    margin-top: 2.8vw;
+    margin-top: 3vw;
     margin: 1.8vw 1.8vw;
   }
   .UserInput {
-    margin: 3.2vw 0vw;
-    height: 3.6vw;
-    font-size: 3vw;
+    margin: 3.5vw 0vw;
+    height: 4vw;
+    font-size: 3.2vw;
   }
   .ErrorMessages {
-    margin-top: 1vw;
-    font-size: 3vw;
+    margin-top: 1.3vw;
+    font-size: 3.2vw;
   }
   .FormButtons {
-    width: 16vw;
-    height: 7vw;
-    font-size: 3vw;
-    margin: 1.4vw auto;
+    width: 18vw;
+    height: 8vw;
+    font-size: 3.2vw;
+    margin: 1.5vw auto;
   }
   #signUpLink {
-    font-size: 3vw; 
+    font-size: 3.2vw; 
   }
 }
 
