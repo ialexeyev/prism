@@ -283,7 +283,7 @@ body {
 /* SMARTPHONES: 480px */
 @media screen and (max-width: 480px) {
   #signInFormBlock {
-    width: 96vw;
+    width: 98vw;
     height: 32vh;
     margin: 23vh 0vw;
   }
@@ -315,7 +315,7 @@ body {
     font-size: 3.6vw; 
   }
   #signUpFormBlock {
-    width: 96vw;
+    width: 98vw;
     height: 53vh;
     margin: 13vh 0vw;
   }
@@ -324,7 +324,7 @@ body {
 /* MOBILE 360px */
 @media screen and (max-width: 360px) {
   #signInFormBlock {
-    width: 96vw;
+    width: 98vw;
     height: 37vh;
     margin: 20vh 0vw;
   }
@@ -356,7 +356,7 @@ body {
     font-size: 4.2vw; 
   }
   #signUpFormBlock {
-    width: 96vw;
+    width: 98vw;
     height: 62vh;
     margin: 9vh 0vw;
   }
