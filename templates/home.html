@@ -12,16 +12,16 @@
 {% block content %} 
 <div id = "homeBlock" class = "WallBlocks">
 
-  <!-- sign up block -->
+  <!-- sign in block -->
   <div id = "signInFormBlock" class = "FormBlocks">
     <h2 class = "StandardHeaders">Sign in</h2>
     <div class = "SignForms" id = "signInForm">
       <form action = "" method = "post">
-          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "ID" autocomplete="off" onfocus = "" title = "ID" required>
+          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "ID" autocomplete="off" onfocus = "clearErrors(this, document.getElementById('signInError'))" title = "ID" required>
           <input type = "password" class = "UserInput" id = "userPsw" name = "userPsw" placeholder = "Password" autocomplete="off" onfocus = "" title = "Password" required>
           <button type = "button" id = "signUpLink" onclick = "openSignUp(this)">No account? Create one!</button>
-          <h3 class = "ErrorMessages" id = "idErrMess">ERROR</h3>
-          <button type = "button" class = "FormButtons" id = "signInButton" value = "Start" onclick = "">START</button>
+          <h3 class = "ErrorMessages" id = "signInError">ERROR</h3>
+          <button type = "button" class = "FormButtons" id = "signInButton" value = "Start" onclick = "signIn(document.getElementsByName('userID')[0], document.getElementsByName('userPsw')[0], document.getElementById('signInError'))">START</button>
       </form>
     </div>
   </div>
@@ -45,7 +45,7 @@
               <option value="Supervisor" disabled selected>Supervisor</option>
               <option value="yangildin">Yangildin Rassul</option>
             </select>
-           <h3 class = "ErrorMessages" id = "signUpErrMess">ERROR</h3>
+           <h3 class = "ErrorMessages" id = "signUpError">ERROR</h3>
            <button type = "button" class = "FormButtons" id = "signUpButton" value = "Submit" onclick = "">SUBMIT</button>
        </form>
      </div>
@@ -58,5 +58,6 @@
 
 <!-- scripts -->
 {% block scripts %}
+<script src = "static/asset/constants.js"></script>
 <script src = "static/asset/home.js"></script>
 {% endblock %}
