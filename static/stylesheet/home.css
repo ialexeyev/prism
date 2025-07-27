@@ -107,6 +107,7 @@ body {
   border: none;
   border-bottom: 0.1vw solid #003a84;
   cursor: pointer;
+  background: white;
 }
 .SignSelects:focus {
   outline: none;
@@ -315,7 +316,7 @@ body {
   }
   #signUpFormBlock {
     width: 100vw;
-    height: 54vh;
+    height: 53vh;
     margin: 13vh 0vw;
   }
 }
