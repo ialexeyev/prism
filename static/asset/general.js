@@ -32,3 +32,8 @@ function displayUserImg(img) {
       img.style.scale = "5";
     }
 }
+
+/* Return to home page */
+function goHome() {
+  window.location.href = "/";
+}
