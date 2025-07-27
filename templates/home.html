@@ -11,18 +11,46 @@
 <!-- main content -->
 {% block content %} 
 <div id = "homeBlock" class = "WallBlocks">
+
+  <!-- sign up block -->
   <div id = "signInFormBlock" class = "FormBlocks">
     <h2 class = "StandardHeaders">Sign in</h2>
-    <div class = "SignInForms" id = "signInForm">
+    <div class = "SignForms" id = "signInForm">
       <form action = "" method = "post">
-          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "ID" autocomplete="off" onfocus = "" required>
-          <input type = "password" class = "UserInput" id = "userPsw" name = "userPsw" placeholder = "Password" autocomplete="off" onfocus = "" required>
-          <a href = "" rel = "alternate" target = "_self" id = "signUpLink">No account? Create one!</a>
+          <input type = "text" class = "UserInput" id = "userID" name = "userID" placeholder = "ID" autocomplete="off" onfocus = "" title = "ID" required>
+          <input type = "password" class = "UserInput" id = "userPsw" name = "userPsw" placeholder = "Password" autocomplete="off" onfocus = "" title = "Password" required>
+          <button type = "button" id = "signUpLink" onclick = "openSignUp(this)">No account? Create one!</button>
           <h3 class = "ErrorMessages" id = "idErrMess">ERROR</h3>
           <button type = "button" class = "FormButtons" id = "signInButton" value = "Start" onclick = "">START</button>
       </form>
     </div>
   </div>
+
+  <!-- sign up block -->
+  <div id = "signUpFormBlock" class = "FormBlocks">
+     <h2 class = "StandardHeaders">Sign up</h2>
+     <div class = "SignForms" id = "signUpForm">
+       <form action = "" method = "post">
+           <input type = "text" class = "UserInput" id = "userFirstID" name = "userFirstID" placeholder = "ID" autocomplete="off" onfocus = "" title = "ID" required>
+           <input type = "text" class = "UserInput" id = "userFirstName" name = "userFirstName" placeholder = "First name" autocomplete="off" onfocus = "" title = "First name" required>
+           <input type = "text" class = "UserInput" id = "userLastName" name = "userLastName" placeholder = "Last name" autocomplete="off" onfocus = "" title = "Last name" required>
+           <input type = "email" class = "UserInput" id = "userEmail" name = "userEmail" placeholder = "Email" autocomplete="off" onfocus = "" title = "Email" required>
+           <select class = "SignSelects" name="userDepartment" id = "userDepartment"  placeholder = "Department" onfocus = "" title = "Department" onclick = "selectChangeColor(this)">
+             <option value="Department" disabled selected>Department</option>
+             <option value="assemblyShop">Assembly Shop</option>
+             <option value="bodyShop">Body Shop</option>
+             <option value="paintShop">Paint Shop</option>
+           </select>
+           <select class = "SignSelects" name="userSupervisor" id = "userSupervisor"  placeholder = "Supervisor" onfocus = "" title = "Supervisor" onclick = "selectChangeColor(this)">
+              <option value="Supervisor" disabled selected>Supervisor</option>
+              <option value="yangildin">Yangildin Rassul</option>
+            </select>
+           <h3 class = "ErrorMessages" id = "signUpErrMess">ERROR</h3>
+           <button type = "button" class = "FormButtons" id = "signUpButton" value = "Submit" onclick = "">SUBMIT</button>
+       </form>
+     </div>
+  </div> 
+  
   <img src = "static/img/homeimg.png" id = "homeimg" class = "WallImages" alt = "Home image" title = "CLICK ME TO START" onclick = "appstart(this)">
    <img src = "static/img/wall.jpg" id = "signinimg" class = "WallImages" alt = "Sign in image" onclick = "";>
 </div>

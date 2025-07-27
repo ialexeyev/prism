@@ -6,7 +6,8 @@ body {
 }
 
 #homeimg, #signinimg,
-#signInFormBlock {
+#signInFormBlock, 
+#signUpFormBlock {
   transition: 1s;
 }
 
@@ -16,11 +17,16 @@ body {
 
 #signinimg {
   transform: rotateY(90deg);
+  display: none;
 }
 
 #signInFormBlock {
   transform: rotateX(90deg);
   position: absolute;
+}
+
+#signInFormBlock, 
+#signUpFormBlock {
   z-index: 1;
 }
 
@@ -28,7 +34,7 @@ body {
   font-family: HyundaiSans, sans-serif;
   text-align: center;
 }
-.SignInForms {
+.SignForms {
   height: 80%;
   height: 60%;
 }
@@ -68,15 +74,41 @@ body {
 }
 #signUpLink {
   font-family: HyundaiSans, sans-serif;
-  text-decoration: none;
   font-style: italic;
   color: #003a84;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
 }
 #signUpLink:hover,
 #signUpLink:focus {
   text-decoration: underline;
+  cursor: pointer;
 }
 #signUpLink:focus {
+  outline: none;
+}
+#signUpLink:active {
+  color: red;
+}
+
+#signUpFormBlock {
+  transform: rotateX(90deg);
+  position: absolute;
+  display: none;
+}
+
+.SignSelects {
+  width: 100%;
+  font-family: HyundaiSans, sans-serif;
+  color: gray;
+  border: none;
+  border-bottom: 0.1vw solid #003a84;
+  cursor: pointer;
+}
+.SignSelects:focus {
   outline: none;
 }
 
@@ -87,19 +119,20 @@ body {
 @media screen and (max-width: 1824px) {
   #signInFormBlock {
     width: 45vw;
-    height: 48vh;
+    height: 44vh;
     margin: 18.5vh 25vw;
   }
   .StandardHeaders {
     margin-top: 1vw;
     font-size: 1.3vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 1.5vw;
     margin: 1vw 1vw;
   }
-  .UserInput {
-    margin: 1.5vw 0vw;
+  .UserInput,
+  .SignSelects {
+    margin: 1.2vw 0vw;
     height: 2vw;
     font-size: 1vw;
   }
@@ -116,6 +149,11 @@ body {
   #signUpLink {
     font-size: 1vw; 
   }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 78vh;
+    margin: 4vh 25vw;
+  }
 }
 
 /* LAPTOPS: 1224px */
@@ -129,11 +167,12 @@ body {
     margin-top: 1.5vw;
     font-size: 1.5vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 1.6vw;
     margin: 1.1vw 1.1vw;
   }
-  .UserInput {
+  .UserInput,
+  .SignSelects {
     margin: 1.6vw 0vw;
     height: 2.1vw;
     font-size: 1.2vw;
@@ -151,6 +190,11 @@ body {
   #signUpLink {
     font-size: 1.2vw; 
   }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 81vh;
+    margin: 2.6vh 25vw;
+  }
 }
 
 /* NET LAPTOPS: 1024px */
@@ -164,11 +208,12 @@ body {
     margin-top: 2vw;
     font-size: 1.7vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 1.8vw;
     margin: 1.3vw 1.3vw;
   }
-  .UserInput {
+  .UserInput, 
+  .SignSelects {
     margin: 1.8vw 0vw;
     height: 2.2vw;
     font-size: 1.4vw;
@@ -186,6 +231,11 @@ body {
   #signUpLink {
     font-size: 1.4vw; 
   }
+  #signUpFormBlock {
+    width: 45vw;
+    height: 86vh;
+    margin: 0vh 25vw;
+  }
 }
 
 /* PADS: 768px */
@@ -199,11 +249,12 @@ body {
     margin-top: 2.8vw;
     font-size: 2.8vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 2.6vw;
     margin: 1.6vw 1.6vw;
   }
-  .UserInput {
+  .UserInput, 
+  .SignSelects {
     margin: 2.6vw 0vw;
     height: 3.2vw;
     font-size: 2.2vw;
@@ -221,6 +272,11 @@ body {
   #signUpLink {
     font-size: 2.2vw; 
   }
+  #signUpFormBlock {
+    width: 55vw;
+    height: 76vh;
+    margin: 10vh 20vw;
+  }
 }
 
 /* SMARTPHONES: 480px */
@@ -232,29 +288,35 @@ body {
   }
   .StandardHeaders {
     margin-top: 4vw;
-    font-size: 4vw;
+    font-size: 4.1vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 3vw;
     margin: 1.8vw 1.8vw;
   }
-  .UserInput {
+  .UserInput, 
+  .SignSelects {
     margin: 3.5vw 0vw;
     height: 4vw;
-    font-size: 3.5vw;
+    font-size: 3.6vw;
   }
   .ErrorMessages {
     margin-top: 1.3vw;
-    font-size: 3.5vw;
+    font-size: 3.6vw;
   }
   .FormButtons {
     width: 18vw;
     height: 8vw;
-    font-size: 3.5vw;
+    font-size: 3.6vw;
     margin: 1.3vw auto;
   }
   #signUpLink {
-    font-size: 3.5vw; 
+    font-size: 3.6vw; 
+  }
+  #signUpFormBlock {
+    width: 100vw;
+    height: 60vh;
+    margin: 10vh 0vw;
   }
 }
 
@@ -267,28 +329,34 @@ body {
   }
   .StandardHeaders {
     margin-top: 4.5vw;
-    font-size: 4.5vw;
+    font-size: 4.6vw;
   }
-  .SignInForms {
+  .SignForms {
     margin-top: 3.2vw;
     margin: 2vw 0vw;
   }
-  .UserInput {
+  .UserInput, 
+  .SignSelects {
     margin: 4.2vw 0vw;
     height: 4.5vw;
-    font-size: 4.1vw;
+    font-size: 4.2vw;
   }
   .ErrorMessages {
     margin-top: 1.3vw;
-    font-size: 4.1vw;
+    font-size: 4.2vw;
   }
   .FormButtons {
     width: 22vw;
     height: 10vw;
-    font-size: 4.1vw;
+    font-size: 4.2vw;
     margin: 1.5vw auto;
   }
   #signUpLink {
-    font-size: 4.1vw; 
+    font-size: 4.2vw; 
+  }
+  #signUpFormBlock {
+    width: 100vw;
+    height: 62vh;
+    margin: 9vh 0vw;
   }
 }
