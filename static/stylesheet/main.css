@@ -179,6 +179,41 @@ body {
   }
 }
 
+/* BIG PADS: 1024px */
+@media screen and (max-width: 1024px) and (min-height: 900px) {
+  body {
+    margin: 0.7vw 1vw 0.7vw 1vw;
+  }
+  #appheader {
+    height: 4.2vw;
+  }
+    #appname {
+      font-size: 2.5vw;
+      margin: 1.1vw 0.4vw;
+    }
+    #appuser {
+      font-size: 1.8vw;
+      margin: 1vw 2vw 0vw 0.9vw;
+    }
+    #htklogo {
+      margin-top: 0.3vw;
+      height: 98%;
+    }
+    #userlogo {
+      margin-top: 0.9vw;
+      height: 70%;
+    }
+
+  #appmain {
+    margin-top: 0.7vh;
+    height: 84vh;
+  }
+
+  #appfooter {
+    font-size: 1.6vw;
+  }
+}
+
 /* PADS: 768px */
 @media screen and (max-width: 768px) {
   body {
@@ -220,32 +255,32 @@ body {
     margin: 1vw 1.2vw 1vw 1.2vw;
   }
   #appheader {
-    height: 7vw;
+    height: 8vw;
   }
     #appname {
-      font-size: 4vw;
-      margin: 1.9vw 0.3vw;
+      font-size: 4.7vw;
+      margin: 2vw 0.3vw;
     }
     #appuser {
-      font-size: 3.2vw;
-      margin: 2.1vw 2vw 0vw 0.9vw;
+      font-size: 3.5vw;
+      margin: 2.4vw 2vw 0vw 1.2vw;
     }
     #htklogo {
-      margin-top: 0.8vw;
-      height: 90%;
+      margin-top: 0.7vw;
+      height: 92%;
     }
     #userlogo {
-      margin-top: 1.7vw;
-      height: 60%;
+      margin-top: 2vw;
+      height: 62%;
     }
 
   #appmain {
-    margin-top: 0.8vh;
-    height: 83vh;
+    margin-top: 0.7vh;
+    height: 82vh;
   }
 
   #appfooter {
-    font-size: 2.5vw;
+    font-size: 3vw;
   }
 }
 

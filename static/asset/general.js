@@ -20,6 +20,9 @@ function displayUserImg(img) {
       if((window.innerWidth < 1024) && (window.innerWidth >= 768)) {
         img.style.translate = "-4.5vw 4.5vw"; // Net Laptop
       }
+      if((window.innerWidth < 1024) && (window.innerWidth >= 768) && (window.innerHeight >= 900)) {
+        img.style.translate = "-6.3vw 5.9vw"; // Big Pad
+      }
       if((window.innerWidth < 768) && (window.innerWidth >= 480)) {
         img.style.translate = "-6.9vw 6.9vw"; // Pad
       }
