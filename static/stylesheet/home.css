@@ -243,7 +243,7 @@ body {
 @media screen and (max-width: 768px) {
   #signInFormBlock {
     width: 55vw;
-    height: 48vh;
+    height: 32vh;
     margin: 19.5vh 21.5vw;
   }
   .StandardHeaders {
