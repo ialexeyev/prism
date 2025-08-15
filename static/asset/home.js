@@ -35,9 +35,82 @@ function selectChangeColor(obj) {
 /* Sign in main function */
 function signIn(id, passw, err) {
   /* 1. check grammar mistakes */
-  checkSignIn(id, passw, err);
+  if(checkSignIn(id, passw, err)) {
+  /* 2. synchronization with database */
+    $.ajax({
+      data : {userid : id.value, userpass : passw.value },
+      type : 'POST',
+      url : '/signinprocess'
+      })
+      .done(function(data) {
+        if(data == 'OK') {
+          err.style.color = "#003a84"
+          err.textContent = SUCCESS_TXT_MAIN;
+          document.body.style.opacity = "0"; // enter to application workspace
+        }
+        else if(data == 'ID NOK'){
+          err.style.color = "red";
+          err.textContent = ERR_MSG_TXT_NO_USER;
+        }
+        else if(data == 'PASS NOK') {
+          err.style.color = "red";
+          err.textContent = ERR_MSG_TXT_CHECK_PASSWORD;
+        }
+        else {
+          err.style.color = "red";
+          err.textContent = ERR_MSG_TXT_SERV_CONN;
+      }
+    });
+    
+  }
   
 }
+
+
+/* Sign up main function */
+function signUp(firstname, 
+                lastname, 
+                mail, 
+                department, 
+                position, 
+                supervisor, 
+                err) {
+  /* 1. check grammar mistakes */
+  if(checkSignUp(document.getElementsByName('userFirstName')[0], document.getElementsByName('userLastName')[0], document.getElementsByName('userEmail')[0], document.getElementsByName('userDepartment')[0], document.getElementsByName('userPosition')[0], document.getElementsByName('userSupervisor')[0], document.getElementById('signUpError'))) {
+    /* synchronization with database */
+    $.ajax({
+       data : { newfname : firstname.value,
+                newlname : lastname.value,
+                newmail : mail.value,
+                newdep : department.value,
+                newpos : position.value,
+                newsup : supervisor.value },
+       type : 'POST',
+       url : '/signupprocess'
+       })
+       .done(function(data) {
+         if(data == 'OK') {
+             err.style.color = "#003a84"
+             err.textContent = ERR_MSG_TXT_REQUEST_SENT; 
+             setTimeout(() => {
+               document.body.style.opacity = "0";
+             }, "2000");
+             setTimeout(() => {
+                window.location.href = "/";
+             }, "3000");
+           }
+           else if(data == 'NOK'){
+             err.style.color = "red";
+             err.textContent = ERR_MSG_TXT_DATABASE_CONN;
+           }
+           else {
+             err.style.color = "red";
+             err.textContent = ERR_MSG_TXT_SERV_CONN;
+           }
+      });
+  }
+}
+
 
 /* Checking sign in form (frontend) */
 function checkSignIn(userId, userPassw, errObj) {
@@ -80,30 +153,14 @@ function checkSignIn(userId, userPassw, errObj) {
 }
 
 /*Checking sign up form (frontend)*/
-function checkSignUp(firstid,
-                     firstname,
+function checkSignUp(firstname,
                      lastname,
                      mail,
                      department,
+                     position,
                      supervisor,
                      errObj) {
-  /* 1. checking first ID */
-  if(firstid.value == "") {
-    showErrorMsg(errObj, ERR_MSG_TXT_ID_EMPTY);
-    paintErrField(firstid);
-    return false;
-  }
-  else if(firstid.value.length > 30) {
-    showErrorMsg(errObj, ERR_MSG_TXT_ID_INCREASED_LENGTH);
-    paintErrField(firstid);
-    return false;
-  }
-  else if(((/^[a-z.]+$/).test(firstid.value)) == false) {
-    showErrorMsg(errObj, ERR_MSG_TXT_ID_INVALID);
-    paintErrField(firstid);
-    return false;
-  }
-  /* 2. Checking first name */
+  /* 1. Checking first name */
   if(firstname.value == "") {
     showErrorMsg(errObj, ERR_MSG_TXT_FIRST_NAME_EMPTY);
     paintErrField(firstname);
@@ -129,7 +186,7 @@ function checkSignUp(firstid,
     paintErrField(firstname);
     return false;
   }
-  /* 3 Checking last name */
+  /* 2 Checking last name */
   if(lastname.value == "") {
     showErrorMsg(errObj, ERR_MSG_TXT_LAST_NAME_EMPTY);
     paintErrField(lastname);
@@ -155,7 +212,7 @@ function checkSignUp(firstid,
     paintErrField(lastname);
     return false;
   }
-  /* 4. Checking email */
+  /* 3. Checking email */
   if(mail.value == "") {
     showErrorMsg(errObj, ERR_MSG_TXT_EMAIL_EMPTY);
     paintErrField(mail);
@@ -181,10 +238,16 @@ function checkSignUp(firstid,
     paintErrField(mail);
     return false;
   }
-  /* 5. Checking departments list */
+  /* 4. Checking departments list */
   else if(department.value == "Department") {
     showErrorMsg(errObj, ERR_MSG_TXT_SELECT_DEPARTMENT_EMPTY);
     paintErrField(department);
+    return false;
+  }
+  /* 5. Checking positions list */
+  else if(position.value == "Position") {
+    showErrorMsg(errObj, ERR_MSG_TXT_SELECT_POSITION_EMPTY);
+    paintErrField(position);
     return false;
   }
   /* 6. Checking supervisors list */

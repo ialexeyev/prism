@@ -35,3 +35,21 @@ print(alex)
 4. Check the tables count in database (sqlite3) {
   ("SELECT name FROM sqlite_master WHERE type='table';")
 }
+
+5. Insert column to the table (sqlite3):
+  "ALTER TABLE users ADD COLUMN uphoto TEXT";
+
+6. Create table in the database (sqlite3):
+"cursor.execute('''
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY,
+        name TEXT,
+        age INTEGER
+    )
+''')"
+
+7. Output all columns from the table:
+   " PRAGMA table_info('customers') ";
+  
+8. Delete row from the table:
+    "DELETE FROM имя_таблицы WHERE условие;"
