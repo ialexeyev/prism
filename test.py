@@ -2,7 +2,7 @@ import sqlite3
 
 conn = sqlite3.connect('prismdb.db')
 prism_cursor = conn.cursor()
-request = "SELECT * FROM tempusers"
+request = "SELECT * FROM base"
 #request = "DELETE FROM tempusers WHERE id = 2;"
 #request = "ALTER TABLE tempusers ADD COLUMN tustatus TEXT"
 #prism_cursor.execute("INSERT INTO services (spagename, sname, sdata) VALUES (?, ?, ?)", ('home', 'positionFieldPlaceholder', 'Position'))

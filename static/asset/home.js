@@ -47,6 +47,9 @@ function signIn(id, passw, err) {
           err.style.color = "#003a84"
           err.textContent = SUCCESS_TXT_MAIN;
           document.body.style.opacity = "0"; // enter to application workspace
+          setTimeout(() => {
+            window.location.href = "/mainpage";
+           }, "1000");
         }
         else if(data == 'ID NOK'){
           err.style.color = "red";

@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 
 #--- PAGES ---
-# HOME
+# 1. HOME
 @app.route('/')
 def prism():
   return render_template('home.html',
@@ -14,6 +14,13 @@ def prism():
                          departments=loadunique('users', 'udepartment'),
                          positions=loadunique('users', 'uposition'),
                          supervisors=loadunique('users', 'usupervisor'))
+
+# 2. MAIN PAGE
+@app.route('/mainpage')
+def mainpage():
+  return render_template('mainpage.html',
+                          base = load('base', '*'),
+                          services = load('services', '*'))
 
 
 #--- PROCESSORS ---
@@ -41,6 +48,8 @@ def signupprocess():
     return "OK"
   else:
     return "NOK"
+
+
 
 
 
